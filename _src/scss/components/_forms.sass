@@ -1,0 +1,181 @@
+.form-order-wrapper
+    background: #fff
+    width: 585px
+    position: relative
+    text-align: center
+    padding: 20px 30px 30px 30px
+    border: 1px solid #b9bbc3
+    box-sizing: border-box
+    margin-top: -26px
+    float: right
+    &.wide
+        width: 750px
+
+    .inner-text
+        ul
+            padding-left: 18px
+            li
+                list-style: disc
+        .text
+            span.gray
+                display: block
+                color: #afafaf
+                text-align: center
+            &.text-left
+                text-align: left
+        .text-head
+            margin-bottom: 10px
+            color: $blue
+            text-align: center
+
+
+    .map
+        width: 100%
+        height: 240px
+        margin-bottom: 20px
+
+    .icon-img
+        margin-bottom: 20px
+    .line
+        height: 1px
+        width: 150px
+        background: $black
+        margin: 15px auto
+
+    .btn-close
+        transition: .4s all
+        cursor: pointer
+        position: absolute
+        right: 10px
+        top: 10px
+        width: 24px
+        height: 24px
+        &:hover
+            transform: rotate(180deg)
+        &:before, &:after
+            position: absolute
+            left: 12px
+            content: ' '
+            height: 24px
+            width: 2px
+            background-color: $black
+
+        &:before
+            transform: rotate(45deg)
+
+        &:after
+            transform: rotate(-45deg)
+
+
+    .form-header
+        display: inline-block
+        text-align: center
+        font-size: 11.5pt
+        margin-bottom: 6px
+        margin-top: 0
+    .form-text
+        margin-bottom: 20px
+        text-align: center
+        font-size: 22px
+
+    form.order-form
+        .btn-default
+            margin: 15px 0 8px 0
+        .btn-group
+            input[type=text], textarea
+                font-family: Arial
+                outline: none !important
+                width: 100%
+                height: 34px
+                padding-left: 12px
+                font-size: 11pt
+                border: 1px solid #bfbfbf
+                margin-bottom: 8px
+            textarea
+                padding-top: 10px
+                resize: none
+                height: 74px
+            &.error
+                input[type=text]
+                    border: 2px solid red
+        .policy
+            margin: 0 0 0 0
+            font-size: 12px
+            color: #a5a5a5
+            a
+                color: #a5a5a5
+                text-decoration: underline
+
+
+
+.modal-form
+    .comment
+        text-align: left
+        font-size: 11pt
+        color: gray
+        margin-bottom: 10px
+    &#notwork-form
+        .form-order-wrapper
+            text-align: center !important
+            box-sizing: border-box
+            width: 330px
+            height: 78px
+            color: #ff254f
+            border: 1px solid #ff254f
+            padding: 20px 0
+            line-height: 18px
+            .inner-text
+                text-align: center
+
+    &#order-form
+        .form-order-wrapper
+            padding: 20px 45px 30px 45px
+            .btn-close
+                z-index: 10
+                top: 19px
+            position: relative
+            //&:after
+            //    padding: 12px 140px
+            //    box-sizing: border-box
+            //    content: '     Интересует стоимость и сроки?      Подайте заявку – ответ в течение 10 мин'
+            //    text-align: center
+            //    color: $black
+            //    font-size: 12pt
+            //    line-height: 15pt
+            //    background: #50fed5
+            //    height: 66px
+            //    top: 0
+            //    left: 0
+            //    right: 0
+            //    margin: auto
+            //    position: absolute
+        z-index: 0
+    &#contact-form
+        .form-order-wrapper
+            padding-left: 0
+            padding-right: 0
+
+    &#team-form
+        .form-order-wrapper
+            border: none
+            background: url("../img/icons/team.jpg") no-repeat top center
+            width: 800px
+            height: 302px
+    .form-header
+        margin-top: 0
+    .read-more-text
+        background: white
+        max-height: 600px
+        overflow-y: scroll
+        width: 800px
+        padding: 40px
+        box-sizing: border-box
+        
+        font-size: 16px
+        line-height: 24px
+
+
+.modal-form
+    display: none
+    .form-order-wrapper
+        margin: 0

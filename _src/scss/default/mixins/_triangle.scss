@@ -1,0 +1,61 @@
+// есть проблема если задавать 2 одинаковых треугольника
+// для одного блока через before и after
+// компилятор мержит и показывает только последний
+// решение - задавать разную высоту хотябы на 1px
+// ( глазу не заметно, а компилятор считает 2-мя
+// разными наборами свойств )
+
+@mixin triangle($dir, $size, $length, $color) {
+  content: ' ';
+  position: absolute;
+  width: 0;
+  height: 0;
+  zoom: 1;
+  border: $size transparent solid;
+  @if ($dir == "top" or $dir == "up") {
+    border-bottom-color: $color;
+    border-width: 0 $size $length $size;
+  }
+  @else if ($dir == "right" or $dir == "after") {
+    border-left-color: $color;
+    border-width: $size 0 $size $length;
+  }
+  @else if ($dir == "bottom" or $dir == "down") {
+    border-top-color: $color;
+    border-width: $length $size 0 $size;
+  }
+  @else if ($dir == "left" or $dir == "before") {
+    border-right-color: $color;
+    border-width:  $size $length $size 0;
+  }
+}
+
+// usage
+// @include triangle('top', 50px, 100px, #000000 )
+// top left right bottom, первая цифра ширина с обеих сторон, вторая длина, далее цвет
+
+// sAss usage code just used part
+//+triangle('top', 20px, 50px, #000000)
+//top: -50px
+//left: 50%
+//margin-left: -20px
+
+// Example sCss full
+
+//.box {
+//  width: 200px;
+//  height: 150px;
+//  background-color: green;
+//  margin-top: 50px;
+//  margin-left: 50px;
+//  margin-bottom: 80px;
+//  position: relative; //necessarily
+//
+//  &:before /* can be after depends of situation*/ {
+//    @include triangle('top', 20px, 50px, #000000 );
+//    top: -50px;
+//    left: 50%;
+//    margin-left: -20px;
+//  }
+//
+//}

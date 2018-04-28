@@ -1,0 +1,26 @@
+extends ../includes/_layout
+
+block vars
+    - TITLE = 'Премиальные авточехлы из экокожи от производителя'
+    - META_DESCRIPTION = ''
+    - META_KEYWORDS = ''
+    - PAGE_ID = 'index'
+    - VERSION_NAME = ''
+    meta( name='viewport', content='width=768' )
+
+    style(type="text/css").
+        body {
+            background: url('img/public/pat.png')
+        }
+
+block body
+
+    include ../includes/yandex-metrika.html
+
+    .thanks-page
+        .container
+            .row
+                .col-12
+                    .thanks-text1 Cпасибо, мы приняли вашу заявку
+                    .thanks-text2 Менеджер перезвонит Вам в течение 15 минут
+                    a.back-to-site.btn-default(href=".") Вернуться на сайт

@@ -1,0 +1,86 @@
+button[disabled]
+    color: #000
+
+@-webkit-keyframes sheen
+    0%, 79%
+        opacity: 0
+        filter: alpha(opacity=0)
+        -webkit-transform: rotateZ(60deg) translate(-5em, 7.5em)
+        transform: rotateZ(60deg) translate(-5em, 7.5em)
+    80%
+        opacity: 1
+        filter: alpha(opacity=100)
+        -webkit-transform: rotateZ(60deg) translate(-5em, 7.5em)
+        transform: rotateZ(60deg) translate(-5em, 7.5em)
+    95%
+        opacity: 1
+        filter: alpha(opacity=100)
+        -webkit-transform: rotateZ(60deg) translate(1em, -11em)
+        transform: rotateZ(60deg) translate(1em, -11em)
+    100%
+        opacity: 0
+        filter: alpha(opacity=0)
+        -webkit-transform: rotateZ(60deg) translate(1em, -9em)
+        transform: rotateZ(60deg) translate(1em, -9em)
+@keyframes sheen
+    0%, 79%
+        opacity: 0
+        filter: alpha(opacity=0)
+        -webkit-transform: rotateZ(60deg) translate(-5em, 7.5em)
+        transform: rotateZ(60deg) translate(-5em, 7.5em)
+    80%
+        opacity: 1
+        filter: alpha(opacity=100)
+        -webkit-transform: rotateZ(60deg) translate(-5em, 7.5em)
+        transform: rotateZ(60deg) translate(-5em, 7.5em)
+    95%
+        opacity: 1
+        filter: alpha(opacity=100)
+        -webkit-transform: rotateZ(60deg) translate(1em, -11em)
+        transform: rotateZ(60deg) translate(1em, -11em)
+    100%
+        opacity: 0
+        filter: alpha(opacity=0)
+        -webkit-transform: rotateZ(60deg) translate(1em, -9em)
+        transform: rotateZ(60deg) translate(1em, -9em)
+
+
+%btn
+    border: none
+    font-size: 15px
+    text-transform: uppercase
+    width: 260px
+    height: 50px
+    line-height: 50px
+    text-align: center
+    position: relative
+    z-index: 2
+    overflow: hidden
+    padding: 0
+    outline: none !important
+    border-radius: 3px
+    display: inline-block
+    cursor: pointer
+    color: #fff
+    background: linear-gradient(to bottom right, #e71947, #a9002f)
+    transition: .4s all
+
+    &.transparent
+        border: 2px solid #e60031
+        background: transparent
+
+    &:focus
+        outline: none !important
+    &:hover
+        opacity: .75
+
+
+.btn-default
+    @extend %btn
+
+    &:hover
+
+    &:active
+
+//.btn-custom
+  @extend %btn

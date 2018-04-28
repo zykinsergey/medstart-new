@@ -1,0 +1,354 @@
+@import "__import"
+
+body
+    display: none
+
+    @keyframes fadeInn4
+        0%
+            opacity: 0
+            transform: translate3d(60px, 0, 0)
+        100%
+            opacity: 1
+            transform: translate3d(0, 0, 0)
+
+
+    @keyframes blink-opacity
+        0%, 10%, 90%, 100%
+            opacity: 0
+        30%, 70%
+            opacity: 1
+
+    .container
+        width: 920px !important
+
+
+    font-family: Arial
+    color: $black
+
+    .preloader
+        position: fixed
+        background: white
+        left: 0
+        right: 0
+        top: 0
+        bottom: 0
+        margin: auto
+        z-index: 9999
+
+    .button
+        font-size: 12pt
+        text-transform: uppercase
+        width: 150px
+        font-family: Calibri
+        line-height: 44px
+        text-align: center
+        color: #fff
+        display: inline-block
+        padding: 0
+        background: #3f4457
+        border: 1px solid #3f4457
+        height: 44px
+        transition: .4s all
+        overflow: hidden
+        position: relative
+        z-index: 2
+        &:before
+            position: absolute
+            top: -50%
+            right: -50%
+            bottom: -50%
+            left: -50%
+            opacity: 0
+            filter: alpha(opacity=0)
+            content: ''
+            background: linear-gradient(to bottom,rgba(229,172,142,0),rgba(255,255,255,.3) 50%,rgba(229,172,142,0))
+            transform: rotateZ(60deg) translate(-5em,7.5em)
+            animation: sheen 8s infinite
+
+        &.bottom-button
+            width: 200px
+            font-size: 14pt
+            text-transform: none
+            position: fixed
+            bottom: 0
+            left: 0
+            right: 0
+            height: 40px
+            line-height: 40px
+            margin: auto
+            border-top-left-radius: 10px
+            border-top-right-radius: 10px
+            background: #50fed5
+            border: 1px solid #50fed5
+            color: $black
+            &:hover
+                background: #fff
+        &:hover, &.selected
+            background: #3b3bff
+            border-color: #3b3bff
+
+    .link
+        color: $link
+
+    header
+        padding-top: 15px
+        display: flex
+        align-items: center
+        justify-content: space-between
+        .left, .right
+            opacity: 0
+            width: 15%
+            position: relative
+            .phone
+                text-align: right
+                font-size: 14pt
+                font-family: Calibri
+                font-weight: bold
+            .phone-text
+                animation: blink-opacity 4.5s 2.0s linear infinite
+                white-space: nowrap
+                padding: 6px 10px
+                text-transform: uppercase
+                position: absolute
+                top: -24px
+                left: -4px
+                color: #ff1d78
+                font-weight: bold
+                font-size: 11pt
+                text-align: center
+                background: transparent
+                font-family: Calibri
+        ul.top-menu
+            width: 58%
+            display: flex
+            align-items: center
+            justify-content: space-between
+            .phone-text
+            li
+                img
+                    margin-left: 5px
+                a
+                    transition: .4s all
+                    text-transform: uppercase
+                    font-size: 11pt
+                    &:hover
+                        color: blue
+
+    .center-text
+        display: none
+        font-family: Calibri
+        position: absolute
+        left: 0
+        right: 0
+        top: 110px
+        margin: auto
+        text-align: center
+        background: white
+        .line
+            width: 150px
+            height: 1px
+            background: $black
+            margin: 10px auto
+        .text
+            font-size: 13pt
+        .head
+            font-weight: bold
+            font-size: 15pt
+
+            text-transform: uppercase
+
+    .first-screen
+        display: none
+        .text
+            padding-top: 120px
+            font-size: 15pt
+            line-height: 18pt
+            text-align: center
+            font-weight: bold
+            font-family: Calibri
+            text-transform: uppercase
+
+    .second-screen
+        padding-top: 40px
+        box-sizing: border-box
+        min-height: 390px
+        margin-bottom: 50px
+        display: flex
+        align-items: center
+        position: relative
+        opacity: 0
+        .select-service
+            animation: blink-opacity 5.5s 2.0s linear infinite
+            top: 36px
+            left: 0
+            right: 0
+            margin: auto
+            position: absolute
+            font-size: 12pt
+            width: 170px
+            line-height: 40px
+            text-align: center
+            color: $black
+            display: inline-block
+            padding: 0
+            border: none
+            background: #e6e7ea
+            height: 40px
+            transition: .4s all
+        .main-menu
+            font-family: Calibri
+            padding: 0
+            margin: 0
+            margin-left: 20px
+            & > a
+                opacity: 0
+                animation: 1.49s 6.0s forwards fadeInn4
+                &:nth-child(2)
+                    animation-delay: 6.5s
+                &:nth-child(3)
+                    animation-delay: 6.9s
+                &:nth-child(4)
+                    animation-delay: 7.3s
+                &:nth-child(5)
+                    animation-delay: 7.7s
+                &:nth-child(6)
+                    animation-delay: 8.1s
+                &:nth-child(7)
+                    animation-delay: 8.5s
+                &:nth-child(8)
+                    animation-delay: 8.9s
+                &:nth-child(9)
+                    animation-delay: 9.3s
+                &:nth-child(10)
+                    animation-delay: 9.7s
+                &:nth-child(11)
+                    animation-delay: 10.1s
+                &:nth-child(12)
+                    animation-delay: 10.5s
+                &:nth-child(13)
+                    animation-delay: 10.9s
+                &:nth-child(14)
+                    animation-delay: 11.3s
+                &:nth-child(15)
+                    animation-delay: 11.8s
+                font-weight: bold
+                cursor: pointer
+                line-height: 24pt
+                font-size: 16pt
+                display: block
+            .sub-menu
+                display: none
+                margin-left: 40px
+                a
+                    cursor: pointer
+                    display: block
+                    line-height: 22pt
+                    font-size: 15pt
+            .sub-menu.l2
+                display: none
+                margin-left: 112px
+                a
+                    cursor: pointer
+                    display: block
+                    line-height: 22pt
+                    font-size: 14pt
+
+
+    .footer-text
+        padding-bottom: 60px
+        font-size: 9pt
+        text-align: center
+        img
+            margin-top: 5px
+
+
+    .service-page
+        padding-top: 40px
+        padding-bottom: 40px
+        font-size: 11pt
+        line-height: 15pt
+        h1
+            text-align: center
+            font-size: 11pt
+            font-weight: bold
+            margin-bottom: 12px
+            span
+                display: block
+                font-weight: normal
+
+        .scheme
+            .scheme-header
+                text-align: center
+                font-weight: bold
+                margin-top: 12px
+                span
+                    display: block
+                    font-weight: normal
+            .step
+                margin-top: 12px
+                .head
+                    margin-bottom: 12px
+                    span
+                        padding-right: 7px
+                        font-weight: bold
+                .from
+                    margin-left: 52px
+                ol
+                    margin-bottom: 12px
+                    margin-left: 18px
+                    ul
+                        margin-left: 34px
+                    li
+                        list-style: decimal
+                ul
+                    li
+                        list-style: none
+
+                .prim
+                    span
+                        padding-right: 7px
+                .snos
+                    line-height: 12pt
+                    font-size: 9pt
+            .links
+                margin-top: 12px
+                a
+                    display: block
+                    color: $link
+            .bottom-text
+                box-sizing: border-box
+                margin-top: 12px
+                padding: 10px 45px 10px 25px
+                line-height: 14px
+                font-size: 10pt
+                background: #eeeef2
+
+
+    .garant-page
+        padding-top: 40px
+        padding-bottom: 40px
+        font-size: 11pt
+        line-height: 15pt
+        .clients
+            display: flex
+            flex-direction: column
+            margin-left: 175px
+            span
+                display: inline-block
+                position: relative
+                cursor: pointer
+                color: $link
+                &:after
+                    background: white
+                    transition: .4s all
+                    opacity: 0
+                    position: absolute
+                    display: inline-block
+                    border: 1px solid #8c909c
+                    padding: 10px
+                    content: 'Звоните, проверяйте!'
+                    top: -20px
+                    left: -200px
+                &:hover
+                    &:after
+                        opacity: 1

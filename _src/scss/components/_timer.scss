@@ -1,0 +1,53 @@
+.block-timer {
+  width: 284px;
+  height: 97px;
+  margin: 0 auto;
+
+
+  .timer {
+    padding: 17px 0 0 ;
+    position: relative;
+
+    .timer-text {
+      padding: 0 0 6px 24px;
+      font-size: 13px;
+      text-align: left;
+      font-family: GL;
+      text-transform: none;
+      letter-spacing: 0;
+    }
+
+    .digit {
+      width: 71px;
+      position: relative;
+      float: left;
+      text-align: center;
+      font-family: GB;
+
+      .limiter {
+        position: absolute;
+        left: 59px;
+        top: 4px;
+        font-size: 39px;
+        font-style: oblique;
+        font-family: GL;
+      }
+    }
+
+
+    .js-timer {
+      font-size: 24px;
+      margin:5px 0 3px;
+
+      &.js-timer-seconds {
+        color: #FF5E5E;
+      }
+    }
+    .js-label {
+      font-size: 11px;
+      text-transform: none;
+      font-family: GL;
+      padding-right: 11px;
+    }
+  }
+}

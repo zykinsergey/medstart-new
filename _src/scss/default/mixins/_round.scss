@@ -1,0 +1,11 @@
+// миксин круга
+
+@mixin round($size_px) {
+  width: $size_px;
+  height: $size_px;
+  border-radius: $size_px;
+}
+
+// пример использования sAss
+//.some_class
+////+round(10px)

@@ -1,0 +1,57 @@
+mixin timer(text, limiter)
+  .timer
+    .timer-text=text
+    .digit
+      .limiter= limiter
+      .js-timer.js-timer-days
+      .js-label.js-label-days
+    .digit
+      .limiter=limiter
+      .js-timer.js-timer-hours
+      .js-label.js-label-hours
+    .digit
+      .limiter=limiter
+      .js-timer.js-timer-minutes
+      .js-label.js-label-minutes
+    .digit
+      .js-timer.js-timer-seconds
+      .js-label.js-label-seconds
+
+//-usage;
+//- +timer('До конца акции осталось', '')
+//- +timer('До конца акции осталось', ':')
+
+//- ==========================================================
+
+
+
+//- new sentece after N words
+- var colonEvery = 10
+- var words = ['consectetur', 'adipiscing', 'elit', 'curabitur', 'vel', 'hendrerit', 'libero', 'eleifend', 'blandit', 'nunc', 'ornare', 'odio', 'ut', 'orci', 'gravida', 'imperdiet', 'nullam', 'purus', 'lacinia', 'a', 'pretium', 'quis', 'congue', 'praesent', 'sagittis', 'laoreet', 'auctor', 'mauris', 'non', 'velit', 'eros', 'dictum', 'proin', 'accumsan', 'sapien', 'nec', 'massa', 'volutpat', 'venenatis', 'sed', 'eu', 'molestie', 'lacus', 'quisque', 'porttitor', 'ligula', 'dui', 'mollis', 'tempus', 'at', 'magna', 'vestibulum', 'turpis', 'ac', 'diam', 'tincidunt', 'id', 'condimentum', 'enim', 'sodales', 'in', 'hac', 'habitasse', 'platea', 'dictumst', 'aenean', 'neque', 'fusce', 'augue', 'leo', 'eget', 'semper', 'mattis', 'tortor', 'scelerisque', 'nulla', 'interdum', 'tellus', 'malesuada', 'rhoncus', 'porta', 'sem', 'aliquet', 'et', 'nam', 'suspendisse', 'potenti', 'vivamus', 'luctus', 'fringilla', 'erat', 'donec', 'justo', 'vehicula', 'ultricies', 'varius', 'ante', 'primis', 'faucibus', 'ultrices', 'posuere', 'cubilia', 'curae', 'etiam', 'cursus', 'aliquam', 'quam', 'dapibus', 'nisl', 'feugiat', 'egestas', 'class', 'aptent', 'taciti', 'sociosqu', 'ad', 'litora', 'torquent', 'per', 'conubia', 'nostra', 'inceptos', 'himenaeos', 'phasellus', 'nibh', 'pulvinar', 'vitae', 'urna', 'iaculis', 'lobortis', 'nisi', 'viverra', 'arcu', 'morbi', 'pellentesque', 'metus', 'commodo', 'ut', 'facilisis', 'felis', 'tristique', 'ullamcorper', 'placerat', 'aenean', 'convallis', 'sollicitudin', 'integer', 'rutrum', 'duis', 'est', 'etiam', 'bibendum', 'donec', 'pharetra', 'vulputate', 'maecenas', 'mi', 'fermentum', 'consequat', 'suscipit', 'aliquam', 'habitant', 'senectus', 'netus', 'fames', 'quisque', 'euismod', 'curabitur', 'lectus', 'elementum', 'tempor', 'risus', 'cras', 'colus', 'miga' ]
+
+mixin capitalize(string)
+  = string.charAt(0).toUpperCase() + string.slice(1)
+
+mixin beginSentence(string)
+  = '. '
+  +capitalize(string)
+
+- var maxWords = words.length - 1
+mixin lorem(howmany, loremipsum)
+  //- include lorem ipsum?
+  if loremipsum || typeof loremipsum == 'undefined'
+    = 'Lorem ipsum dolor sit amet. '
+  - for (var i = 0; i < howmany; i++) {
+  - var nextWord = words[Math.floor((Math.random()*maxWords))]
+  if (i == 0)
+    mixin capitalize(nextWord)
+  else
+    if !parseInt(i % colonEvery) && (howmany - i > colonEvery)
+      mixin beginSentence(nextWord)
+    else
+      = ' ' + nextWord
+      if i == howmany - 1
+        = '.'
+  - }
+
+- var getRandomInt = function(min, max) {return Math.floor(Math.random() * (max - min + 1)) + min}

@@ -1,0 +1,16 @@
+include ../helpers/_mixins
+include ./_vars_global
+block vars
+
+include _header
+
+body
+  .wr.wr_all(id='page-' + PAGE_ID)
+      .container
+          include _menu.jade
+    block body
+
+  include _modals.jade
+  include _modals_work.jade
+  include _footer.jade
+</html>

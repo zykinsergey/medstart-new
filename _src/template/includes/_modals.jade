@@ -1,0 +1,128 @@
+.modal-form#base-form
+    .form-order-wrapper
+        .btn-close
+        .form-header Оставьте заявку
+            .form-text и мы Вам перезвоним
+        form.order-form(action="",method="post",data-result='',enctype="multipart/form-data")
+            .btn-group
+                input(type='text',name='name',placeholder='Ваше имя')
+            .btn-group
+                input(type='text',name='phone',placeholder='Ваш телефон')
+            .policy Гарантируем
+                a(href="policy.pdf", target='_blank') конфиденциальность
+            .btn-group
+                button.button(type="submit") Отправить
+
+.modal-form#order-form
+    .form-order-wrapper
+        .btn-close
+        .inner-text
+            .text-center.icon-img
+                img(src='img/icons/mail.png')
+        .form-header You can write us in English, German, Spanish, Korean, Japanese
+        form.order-form(action="",method="post",data-result='',enctype="multipart/form-data")
+            .btn-group
+                textarea(name='types',placeholder='Вид/ы деятельности или сообщение*')
+            .btn-group
+                input(type='text',name='city',placeholder='Город, округ/район*')
+            .btn-group
+                input(type='text',name='email',placeholder='E-mail*')
+            .btn-group
+                input(type='text',name='phone',placeholder='Моб. телефон')
+            .btn-group
+                input(type='text',name='name',placeholder='Имя')
+            .btn-group
+                .comment * - поля обязательны для заполнения
+            .btn-group
+                button.button(type="submit") Отправить
+
+
+.modal-form#expert-form
+    .form-order-wrapper
+        .btn-close
+        .inner-text
+            .text-center.icon-img
+                img(src='img/icons/i.png')
+            .text.text-left
+                | Экспертно-правовой центр «Линия защиты»  обслуживает корпоративных клиентов с  2005 г. Среди его клиентов компании различной организационно-правой формы собственности, медицинские ассоциации РФ, в т. ч. международные корпорации с мировым именем.
+                .line
+                | Генеральный директор: Некрасова Татьяна Владимировна
+                br
+                br
+                | Адрес офиса:  г. Москва, ул. Кузнецкий мост, д. 21/5, офис 3038
+                br
+                | ИНН 7704572039
+
+
+.modal-form#notwork-form
+    .form-order-wrapper
+        .inner-text
+            | К сожалению, страница на обновление.
+            br
+            | Подайте заявку- ответ в  течение 10 мин
+
+
+
+
+.modal-form#team-form
+    .form-order-wrapper
+        .btn-close
+
+
+.modal-form#price-form
+    .form-order-wrapper
+        .btn-close
+        .inner-text
+            .text-center.icon-img
+                img(src='img/icons/rou.png')
+            .text
+                | Стоимость услуг зависит от многих факторов и
+                br
+                | не может  быть названа без  экспертизы документов (помещения).
+                br
+                | Услуга предоставляется БЕСПЛАТНО.
+            .line
+            .text
+                | Предварительная стоимость высылается в течение
+                br
+                | 10 мин после подачи заявки
+            br
+            .text-center
+                a.open-callback.button(href='#order-form') Написать
+
+.modal-form#warranty-form
+    .form-order-wrapper
+        .btn-close
+        .inner-text
+            .text-center.icon-img
+                img(src='img/icons/rou.png')
+            .text.text-center
+                |Лучшая гарантия – это репутация, которая подтверждается!
+            .line
+            .text.text-center
+                | Найдет предложение лучше – сообщите
+                br
+                | Опровергнем, либо подтвердим!
+            br
+            br
+            .text
+                | Найдет предложение лучше – сообщите
+                br
+                | Опровергнем, либо подтвердим!
+
+
+
+
+.modal-form#contact-form
+    .form-order-wrapper
+        .btn-close
+        .inner-text
+            .text-center.icon-img
+                img(src='img/icons/marker.png')
+            .map#map
+            .text
+                | Россия, Москва, ул. Кузнецкий мост 21/5 оф. 3038  Тел.: +7 495 744 77 03
+                //span.gray You can write us in English, German, Spanish, Korean, Japanese
+            br
+            .text-center
+                a.open-callback.button(href='#order-form') Написать

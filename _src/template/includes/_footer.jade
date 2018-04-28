@@ -1,0 +1,20 @@
+<!--[if lt IE 9]><script src="js/jquery-1.12.0.min.js"></script><![endif]-->
+<!--[if gte IE 9]><!--><script src="js/jquery-2.2.0.min.js"></script><!--<![endif]-->
+
+a.open-callback.button.bottom-button(href='#order-form') Форма заявки
+
+
+.footer-text
+  | Copyright © 2004  MedStart.ru  Все права защищены.
+  br
+  | Политика конфиденциальности. Пользовательское соглашение.
+  br
+  img(src='img/icons/vk_.png')
+
+
+script(type="text/javascript").
+  window.map_coords = "55.786008,49.169446;55.785608, 49.171446;17"; // [*map_coords*]
+  window.VERSION = "#{VERSION_NAME}";
+
+<script src="js/plugins.js?v=#{locals.version}"></script>
+<script src="js/script.js?v=#{locals.version}"></script>
